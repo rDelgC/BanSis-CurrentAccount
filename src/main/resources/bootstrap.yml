@@ -1,0 +1,11 @@
+spring:
+    application:
+        name: bansis-current-account
+    data:
+      mongodb:
+        uri: mongodb://localhost:27017/bandb-current-account
+    cloud:
+        config:
+            uri: http://localhost:8081
+            username: nttdatosr
+            password: nttdatosd
