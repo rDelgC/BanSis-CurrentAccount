@@ -1,6 +1,7 @@
 package com.boot.bansis.current.account.entities;
 
 import java.util.Date;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
  *
- * @author Demn
+ * @author rDelgC
  */
 @Getter
 @Setter
@@ -27,7 +28,7 @@ public class CurrentAccount {
     @Field("account_number")
     private String accountNumber;
 
-    @Field("interbank_account_bank")
+    @Field("interbank_account_code")
     private String interbankAccountCode;
 
     @Field("currency")
@@ -36,7 +37,14 @@ public class CurrentAccount {
     @Field("available_balance")
     private double availableBalance;
 
+    @Field("holders")
+    private Set<Holder> holders;
+
+    @Field("authorized_signers;")
+    private Set<Signer> authorizedSigners;
+
     @Field("created_at")
     @CreatedDate
     private Date createdAt;
+
 }

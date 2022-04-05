@@ -22,7 +22,7 @@ public class CurrentAccountRestController {
     @Autowired
     private CurrentAccountService currentAccountService;
 
-    @GetMapping("/list")
+    @GetMapping("/")
     public Flux<CurrentAccount> getAll() {
         return currentAccountService.findAll();
     }
@@ -31,4 +31,5 @@ public class CurrentAccountRestController {
     public Mono<CurrentAccount> save(@RequestBody CurrentAccount currentAccount) {
         return currentAccountService.save(currentAccount);
     }
+
 }
